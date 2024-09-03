@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Geetha M K</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Correct path -->
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/gradient-connection-background_23-2150516356.jpg?w=996&t=st=1725027833~exp=1725028433~hmac=645b90b4f4b332866c888ec18c9f5f0bcb03ccf945ea34d7b16bae493f537aa4');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure it appears on top */
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Geetha M K's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <img src="C:/Users/Latharani/Documents/IGNITE/profile.jpg" alt="Profile picture of Geetha M K" class="profile-pic">
+            <h2>About Me</h2>
+            <p>I'm Geetha M K, a software developer specializing in Java and Python with experience in web development, data analysis, and AI/ML. I enjoy creating innovative solutions and constantly learning new technologies.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <img src="https://iotdesignpro.com/sites/default/files/main-image/IoT-based-Fire-Alarm-System-using-NodeMCU-ESP8266_0.jpg" alt="Fire Alarm System Using NODE (IOT Mini Project)">
+                <h3>Fire Alarm System Using NODE (IOT Mini Project)</h3>
+                <p>The purpose of the fire service is to protect human life, our property, and Earth's natural resources from fire and other emergencies. It is proposed to utilize an Arduino prototyping board, which is an open-source design and needs programming (based on C++) for fabricating IOT end units. With programming, temperature sensors (LM35) output is transferred through Wi-Fi module (ESP8266) to a server. ESP8266 is the Wi-Fi module used to establish a wireless TCP/IP connection.</p>
+                <a href="https://github.com/Geetha-MK/IOT" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="https://iotdesignpro.com/sites/default/files/main-image/ESP32-based-Webserver-for-Text-to-Speech-Conversion.jpg" alt="Text To Speech And Speech To Text Using Google Server">
+                <h3>Text To Speech And Speech To Text Using Google Server (IOT Project)</h3>
+                <p>This proposed system provides the technique for the deaf, dumb, and blind people to communicate with each other as well as with normal people. For blind people, the image is scanned using a Logitech web camera, which is converted into text; for deaf people, the voice/speech is converted into text using an API.</p>
+                <br><br><a href="https://github.com/Geetha-MK/IOT_PROJECTS" class="btn">View Project</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="resume" class="resume-section">
+        <h2>Resume</h2>
+        <p class="p1">View my resume for detailed information about my skills and experiences.</p>
+        <a id="resume-download" href="resume\Geetha M K Resume .pdf" class="btn" download="Geetha_M_K_Resume.pdf">View Resume</a>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <form action="contact_form.php" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Geetha. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <div class="notification" id="notification">
+        Your message has been sent successfully!
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const notification = document.getElementById('notification');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Simulate form submission
+                setTimeout(function() {
+                    notification.style.display = 'block';
+                    setTimeout(function() {
+                        notification.style.display = 'none';
+                    }, 3000); // Hide notification after 3 seconds
+                }, 1000); // Simulate a delay (1 second) for form submission
+            });
+        });
+    </script>
+</body>
+</html>
